@@ -1,6 +1,6 @@
 #// IMPORTS //#
-import re		# regular expression library
-from config import gv
+import re	# regular expression library
+from modules.config import gv
 
 
 #// VARIABLES //#

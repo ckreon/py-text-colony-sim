@@ -1,7 +1,7 @@
 #// IMPORTS //#
-from config		import gv
-from helpers	import press_enter
-from helpers	import user_quit
+from modules.config		import gv
+from modules.helpers	import press_enter
+from modules.helpers	import user_quit
 
 
 #// VARIABLES //#

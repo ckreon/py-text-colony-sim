@@ -1,5 +1,5 @@
 #// IMPORTS //#
-from config import gv
+from modules.config import gv
 
 
 #// VARIABLES //#
@@ -7,5 +7,5 @@ newline = gv['newline']
 
 
 #// FUNCTIONS //#
-def update():
-	print('-- (2) Updating!' + newline)
+def draw():
+	print('-- (3) Drawing!' + newline)

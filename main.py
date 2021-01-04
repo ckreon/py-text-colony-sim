@@ -17,11 +17,11 @@
 ############################################################
 
 #// IMPORTS //#
-from config		import gv
-from menu			import main_menu
-from process	import process_events
-from update		import update
-from draw			import draw
+from modules.config		import gv
+from modules.menu		import main_menu
+from modules.process	import process_events
+from modules.update		import update
+from modules.draw		import draw
 
 
 #// VARIABLES //#
@@ -50,6 +50,6 @@ main_menu()
 while gv['running']:
 	print('-- Starting Main Loop!' + newline)
 	process_events()	# process inputs and other stuff, including quit
-	update()					# update all objects that need updating
-	draw()						# render things on screen
+	update()			# update all objects that need updating
+	draw()				# render things on screen
 	print('-- Main Loop finished!' + newline)
