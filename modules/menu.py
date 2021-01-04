@@ -19,7 +19,7 @@ def main_menu():
 		print()
 
 		if (u_input == '1'):
-			print('Let the adventures begin!' + newline)
+			print('Let the simulation begin!' + newline)
 			getting_input = False
 			gv['running'] = True
 		elif (re.match(r'^(q|quit)$', u_input, re.IGNORECASE)):
