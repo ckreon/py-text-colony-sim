@@ -6,6 +6,8 @@ import os	# os utilities library
 gv = {
 	'app_run':		True,
 	'running':		False,
+	'main_menu':	True,
+	'new_game':		False,
 	'world_size':	10,
 	'day':			1,
 	'month':		1,

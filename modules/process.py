@@ -1,17 +1,15 @@
 #// IMPORTS //#
 from modules.config		import gv
+from modules.helpers	import ltxt
+from modules.helpers	import utxt
 from modules.helpers	import overview
 from modules.helpers	import press_enter
 from modules.helpers	import user_quit
 
 
-#// VARIABLES //#
-newline = gv['newline']
-
-
 #// FUNCTIONS //#
 def process_events():
-	print('-- (1) Processing events!' + newline)
+	ltxt('Processing events!')
 	#print('-- \'running\' is set to: ' + str(gv['running']) + newline)
 
 	# the following functions are imports, check their respective files

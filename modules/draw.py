@@ -1,5 +1,7 @@
 #// IMPORTS //#
-from modules.config import gv
+from modules.config		import gv
+from modules.helpers	import ltxt
+from modules.helpers	import utxt
 
 
 #// VARIABLES //#
@@ -8,4 +10,4 @@ newline = gv['newline']
 
 #// FUNCTIONS //#
 def draw():
-	print('-- (3) Drawing!' + newline)
+	ltxt('Drawing!')

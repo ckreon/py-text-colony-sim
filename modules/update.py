@@ -1,5 +1,7 @@
 #// IMPORTS //#
 from modules.config		import gv
+from modules.helpers	import ltxt
+from modules.helpers	import utxt
 from modules.helpers	import game_over
 
 
@@ -9,22 +11,22 @@ newline = gv['newline']
 
 #// FUNCTIONS //#
 def update():
-	print('-- (2) Updating!' + newline)
+	ltxt('Updating!')
 
-	print('-- Eating food...' + newline)
+	utxt('-- Eating food...', 0.7)
 	# set 'food' value equal to current food minus current population
 	gv['food'] = gv['food'] - gv['population']
 
 	if (gv['food'] < 0):
-		print('-- Your colony has run out of food and starved.')
-		print('-- Good try, though.')
+		utxt('-- Your colony has run out of food and starved.', 0.7, False)
+		utxt('-- Good try, though.')
 		game_over()
 
-	print('-- Using health supplies...' + newline)
+	utxt('-- Using health supplies...', 0.7)
 	# set 'health' value equal to currenth health minus current population
 	gv['health'] = gv['health'] - gv['population']
 
 	if (gv['health'] < 0):
-		print('-- Your colony has run out of health and died.')
-		print('-- Solid effort, though.')
+		utxt('-- Your colony has run out of health and died.', 0.7, False)
+		utxt('-- Solid effort, though.')
 		game_over()
