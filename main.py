@@ -43,13 +43,16 @@ print('========                                ========')
 print('=============                      =============')
 print('================================================')
 print(newline + newline + newline)
+
 main_menu()
 
+#// MAIN APP LOOP //#
+while gv['app_run']:
 
-#// MAIN GAME LOOP //#
-while gv['running']:
-	print('-- Starting Main Loop!' + newline)
-	process_events()	# process inputs and other stuff, including quit
-	update()			# update all objects that need updating
-	draw()				# render things on screen
-	print('-- Main Loop finished!' + newline)
+	#// MAIN GAME LOOP //#
+	while gv['running']:
+		print('-- Starting Main Loop!' + newline)
+		process_events()	# process inputs and other stuff, including quit
+		update()			# update all objects that need updating
+		draw()				# render things on screen
+		print('-- Main Loop finished!' + newline)

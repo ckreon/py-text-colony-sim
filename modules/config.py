@@ -4,8 +4,12 @@ import os	# os utilities library
 
 #// GLOBAL VARIABLES //#
 gv = {
+	'app_run':		True,
 	'running':		False,
 	'world_size':	10,
+	'day':			1,
+	'month':		1,
+	'year':			1,
 	'population':	10,
 	'food':			100,
 	'wood':			100,
