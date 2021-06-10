@@ -1,6 +1,7 @@
 #// IMPORTS //#
-import re	# regular expression library
-import time	# time functions library
+import re		# regular expression library
+import time		# time functions library
+import random	# random functions library
 from modules.config		import gv
 
 
@@ -9,6 +10,12 @@ newline = gv['newline']
 
 
 #// FUNCTIONS //#
+
+# this function should generate a random number between 1 and 10
+def rng():
+	ltxt('Prior to randomization, RNG is set to: ' + str(gv['rng']))
+	gv['rng'] = random.randint(1,10) # picks a random number between 1 and 10
+	ltxt('After randomization, RNG is set to: ' + str(gv['rng']))
 
 # this function should print a string to the console,
 # sleep for a set amount of seconds, and add a newline
@@ -39,6 +46,40 @@ def game_over():
 	# set 'main_menu' variable to 'True' so we get a menu next loop
 	gv['main_menu']	= True
 	
+# this function should get user input about a yes or no question
+# if they answer yes, it should return true, if no, return false
+def yes_or_no():
+	# get user input (with a prompt), and store it in 'user_input'
+	user_input = input('>> ')
+	print()
+	# use a regular expression to check input for 'y/yes' (any case)
+	if (re.match(r'^(y|ya|yes|)$', user_input, re.IGNORECASE)):
+		# if yes, return true
+		return True
+	else:
+		# otherwise return false
+		return False
+
+# this function should get user input and return it
+def user_input():
+	# return user input (with a prompt)
+	return input('>> ')
+
+# this function should get a number from ther user and return it
+def user_number():
+	getting_input = True
+
+	while (getting_input):
+		try:
+			number = int(input('>> '))
+		except ValueError:
+			utxt('Must be a number!')
+
+		if (number >= 0):
+			getting_input = False
+
+	return number
+
 # this function should ask the user if they'd like to quit
 # if they answer yes, it should actually quit, if not, wheel
 def user_quit():
@@ -66,21 +107,3 @@ def press_enter():
 
 	# force user to hit ENTER to continue
 	input()
-
-# this function should provide the user with an overview
-# of the current game-state (stats, terrain, warnings, etc.)
-def overview():
-	# concatenate the date variables into a string called 'game_date'
-	game_date = (
-		str(gv['month']) + '-' + str(gv['day']) + '-' + str(gv['year'])
-	)
-	# print the various stats
-	utxt(('Date: ' + game_date), 0, False)
-	utxt(('Population: ' + str(gv['population'])), 0, False)
-	utxt(('Food: ' + str(gv['food'])), 0, False)
-	utxt(('Wood: ' + str(gv['wood'])), 0, False)
-	utxt(('Iron: ' + str(gv['iron'])), 0, False)
-	utxt(('Gold: ' + str(gv['gold'])), 0, False)
-	utxt(('Health: ' + str(gv['health'])), 0.7)
-
-	utxt('At some point, this will ask you for some input')

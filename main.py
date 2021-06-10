@@ -61,8 +61,8 @@ while gv['app_run']:
 		# use our custom 'ltxt' function to print log text
 		ltxt('Starting Main Loop!')
 		# execute the main loop functions
-		process_events()	# process inputs and other stuff, including quit
+		draw()				# render main text on screen
 		update()			# update all objects that need updating
-		draw()				# render things on screen
+		process_events()	# process inputs and other stuff, including quit
 		# print more log text
 		ltxt('Main Loop finished!')

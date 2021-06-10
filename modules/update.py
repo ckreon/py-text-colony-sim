@@ -2,7 +2,9 @@
 from modules.config		import gv
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
+from modules.helpers	import rng
 from modules.helpers	import game_over
+from modules.uactions	import farm
 
 
 #// VARIABLES //#
@@ -11,7 +13,11 @@ newline = gv['newline']
 
 #// FUNCTIONS //#
 def update():
+
 	ltxt('Updating!')
+	
+	rng()
+	farm()
 
 	utxt('Eating food...', 0.7)
 	# set 'food' value equal to current food minus current population
