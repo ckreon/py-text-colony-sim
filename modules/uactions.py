@@ -36,7 +36,7 @@ def farm():
 	# run farm function
 	calamity = 0
 	ltxt('RNG is set to: ' + str(gv['rng']))
-	ltxt('Calamity is currently set to: ' + str(calamity))
+	ltxt('Farm Calamity is currently set to: ' + str(calamity))
 
 	if (gv['rng'] <= 5):
 		# normal outcome
@@ -58,10 +58,10 @@ def farm():
 		utxt('It was a terrible day on the farms!')
 		calamity = -3
 
-	ltxt('Calamity is now set to: ' + str(calamity))
+	ltxt('Farm Calamity is now set to: ' + str(calamity))
 
 	food = ((gv['farmers']*3) + calamity)
 	utxt('You generated ' + str(food) + ' food this turn.')
-	
+
 	gv['food'] = (gv['food'] + food)
 	utxt('You now have ' + str(gv['food']) + ' food in storage.')

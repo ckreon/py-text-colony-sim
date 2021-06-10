@@ -13,6 +13,7 @@ gv = {
 	'month':		1,
 	'year':			1,
 	'rng':			0,
+	'weather':		1,
 	'population':	10,
 	'free_pop':		10,
 	'farmers':		0,
@@ -25,6 +26,19 @@ gv = {
 	'gold':			100,
 	'health':		100,
 	'newline':		os.linesep
+}
+
+weather = {
+	1:	"Normal",
+	2:	"Warm",
+	3:	"Warm Windy",
+	4:	"Cool",
+	5:	"Cool Windy",
+	6:	"Hot",
+	7:	"Rainy",
+	8:	"Thunderstorm",
+	9:	"Heat Snap",
+	10:	"Cold Snap"
 }
 
 world_grid = {}

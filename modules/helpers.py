@@ -12,10 +12,9 @@ newline = gv['newline']
 #// FUNCTIONS //#
 
 # this function should generate a random number between 1 and 10
-def rng():
-	ltxt('Prior to randomization, RNG is set to: ' + str(gv['rng']))
-	gv['rng'] = random.randint(1,10) # picks a random number between 1 and 10
-	ltxt('After randomization, RNG is set to: ' + str(gv['rng']))
+def rng(lower_limit=1, upper_limit=10):
+	# picks a random number between the upper and lower limit
+	return random.randint(lower_limit, upper_limit)
 
 # this function should print a string to the console,
 # sleep for a set amount of seconds, and add a newline
@@ -65,7 +64,7 @@ def user_input():
 	# return user input (with a prompt)
 	return input('>> ')
 
-# this function should get a number from ther user and return it
+# this function should get a number from the user, validate it, and return it
 def user_number():
 	getting_input = True
 

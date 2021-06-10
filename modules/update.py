@@ -4,6 +4,7 @@ from modules.helpers	import ltxt
 from modules.helpers	import utxt
 from modules.helpers	import rng
 from modules.helpers	import game_over
+from modules.calamity	import calamity
 from modules.uactions	import farm
 
 
@@ -16,7 +17,15 @@ def update():
 
 	ltxt('Updating!')
 	
-	rng()
+	# set the RNG seed for this loop
+	ltxt('Prior to randomization, RNG is set to: ' + str(gv['rng']))
+	gv['rng'] = rng()
+	ltxt('After randomization, RNG is set to: ' + str(gv['rng']))
+
+	# build the base Calamity tree based off the RNG seed
+	calamity()
+
+	# start the farm action
 	farm()
 
 	utxt('Eating food...', 0.7)
