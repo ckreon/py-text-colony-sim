@@ -13,20 +13,20 @@ newline = gv['newline']
 def update():
 	ltxt('Updating!')
 
-	utxt('-- Eating food...', 0.7)
+	utxt('Eating food...', 0.7)
 	# set 'food' value equal to current food minus current population
 	gv['food'] = gv['food'] - gv['population']
 
 	if (gv['food'] < 0):
-		utxt('-- Your colony has run out of food and starved.', 0.7, False)
-		utxt('-- Good try, though.')
+		utxt('Your colony has run out of food and starved.', 0.7, False)
+		utxt('Good try, though.')
 		game_over()
 
-	utxt('-- Using health supplies...', 0.7)
+	utxt('Using health supplies...', 0.7)
 	# set 'health' value equal to currenth health minus current population
 	gv['health'] = gv['health'] - gv['population']
 
 	if (gv['health'] < 0):
-		utxt('-- Your colony has run out of health and died.', 0.7, False)
-		utxt('-- Solid effort, though.')
+		utxt('Your colony has run out of health and died.', 0.7, False)
+		utxt('Solid effort, though.')
 		game_over()

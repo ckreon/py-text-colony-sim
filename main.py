@@ -45,6 +45,7 @@ print('========                                ========')
 print('=============                      =============')
 print('================================================')
 print(newline + newline + newline)
+utxt('', 1)
 
 
 #// MAIN APP LOOP //#
@@ -57,8 +58,11 @@ while gv['app_run']:
 	#// MAIN GAME LOOP //#
 	# while 'running' is true, run the game loop
 	while gv['running']:
+		# use our custom 'ltxt' function to print log text
 		ltxt('Starting Main Loop!')
+		# execute the main loop functions
 		process_events()	# process inputs and other stuff, including quit
 		update()			# update all objects that need updating
 		draw()				# render things on screen
+		# print more log text
 		ltxt('Main Loop finished!')

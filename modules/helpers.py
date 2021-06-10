@@ -24,10 +24,10 @@ def utxt(u_string, u_sleep=1, u_newline=True):
 	# if 'u_newline' is 'True'
 	if (u_newline):
 		# print string and add newline (defined in config to be OS correct)
-		print(u_string + newline)
+		print('-- ' + u_string + newline)
 	else:
 		# print string
-		print(u_string)
+		print('-- ' + u_string)
 	# sleep for the provided amount of seconds
 	time.sleep(u_sleep)
 
@@ -49,17 +49,17 @@ def user_quit():
 	if (re.match(r'^(y|ya|yes|)$', quit_input, re.IGNORECASE)):
 		# if yes, change running to 'False' and quit
 		gv['running'] = False
-		utxt(('-- \'running\' is set to: ' + str(gv['running'])), 0)
+		ltxt('\'running\' is set to: ' + str(gv['running']))
 		#quit()	# commented out to prove loop stops when 'running' is False
 	else:
 		# otherwise keep running ('else' isn't needed, just here for posterity)
-		utxt('-- Still looping!', 0 , False)
-		utxt(('-- \'running\' is set to: ' + str(gv['running'])), 0)
+		utxt('Still looping!', 0 , False)
+		ltxt('\'running\' is set to: ' + str(gv['running']))
 
 # this function should ask the user to press enter to continue
 # nothing should happen until they press enter
 def press_enter():
-	utxt('-- Press ENTER to continue...', 0)
+	utxt('Press ENTER to continue...', 0)
 
 	# the following works because the 'input' function won't conclude
 	# without a CR (carriage return), which the 'Enter' key provides
@@ -75,12 +75,12 @@ def overview():
 		str(gv['month']) + '-' + str(gv['day']) + '-' + str(gv['year'])
 	)
 	# print the various stats
-	utxt(('-- Date: ' + game_date), 0, False)
-	utxt(('-- Population: ' + str(gv['population'])), 0, False)
-	utxt(('-- Food: ' + str(gv['food'])), 0, False)
-	utxt(('-- Wood: ' + str(gv['wood'])), 0, False)
-	utxt(('-- Iron: ' + str(gv['iron'])), 0, False)
-	utxt(('-- Gold: ' + str(gv['gold'])), 0, False)
-	utxt(('-- Health: ' + str(gv['health'])), 0.7)
+	utxt(('Date: ' + game_date), 0, False)
+	utxt(('Population: ' + str(gv['population'])), 0, False)
+	utxt(('Food: ' + str(gv['food'])), 0, False)
+	utxt(('Wood: ' + str(gv['wood'])), 0, False)
+	utxt(('Iron: ' + str(gv['iron'])), 0, False)
+	utxt(('Gold: ' + str(gv['gold'])), 0, False)
+	utxt(('Health: ' + str(gv['health'])), 0.7)
 
-	utxt('-- At some point, this will ask you for some input')
+	utxt('At some point, this will ask you for some input')
