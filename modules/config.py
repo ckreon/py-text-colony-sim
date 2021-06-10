@@ -6,6 +6,7 @@ import os	# os utilities library
 gv = {
 	'app_run':		True,
 	'running':		False,
+	'verbose':		False,
 	'main_menu':	True,
 	'new_game':		False,
 	'world_size':	10,

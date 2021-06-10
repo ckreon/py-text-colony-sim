@@ -5,7 +5,6 @@ from modules.helpers	import utxt
 from modules.helpers	import rng
 from modules.helpers	import game_over
 from modules.calamity	import calamity
-from modules.uactions	import farm
 
 
 #// VARIABLES //#
@@ -24,9 +23,6 @@ def update():
 
 	# build the base Calamity tree based off the RNG seed
 	calamity()
-
-	# start the farm action
-	farm()
 
 	utxt('Eating food...', 0.7)
 	# set 'food' value equal to current food minus current population

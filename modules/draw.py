@@ -1,5 +1,6 @@
 #// IMPORTS //#
 from modules.config		import gv
+from modules.menus		import game_menu
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 
@@ -34,3 +35,4 @@ def overview():
 def draw():
 	ltxt('Drawing!')
 	overview()
+	game_menu()

@@ -17,13 +17,19 @@
 ############################################################
 
 #// IMPORTS //#
+import sys
 from modules.config		import gv
-from modules.menu		import main_menu
+from modules.menus		import main_menu
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 from modules.process	import process_events
 from modules.update		import update
 from modules.draw		import draw
+
+
+#// ARGS //#
+if (sys.argv[1] == "--verbose"):
+	gv['verbose'] = True
 
 
 #// VARIABLES //#

@@ -19,10 +19,12 @@ def rng(lower_limit=1, upper_limit=10):
 # this function should print a string to the console,
 # sleep for a set amount of seconds, and add a newline
 def ltxt(l_string):
-	# print string and add newline (defined in config to be OS correct)
-	print('** (Log) ' + l_string + newline)
-	# sleep for the provided amount of seconds
-	time.sleep(0.5)
+	# if debug mode is enabled, print the log text, otherwise skip
+	if (gv['verbose']):
+		# print string and add newline (defined in config to be OS correct)
+		print('** (Log) ' + l_string + newline)
+		# sleep for the provided amount of seconds
+		time.sleep(0.5)
 
 # this function should print a string to the console and sleep for a provided
 # amount of seconds after printing the text, adding a newline by default
@@ -69,13 +71,12 @@ def user_number():
 	getting_input = True
 
 	while (getting_input):
-		try:
-			number = int(input('>> '))
-		except ValueError:
-			utxt('Must be a number!')
+		number = input('>> ')
 
-		if (number >= 0):
+		if (int(number)):
 			getting_input = False
+		else:
+			utxt('Must be a number!')
 
 	return number
 
