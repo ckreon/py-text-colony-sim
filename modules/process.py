@@ -7,8 +7,8 @@ from modules.helpers	import press_enter
 #// FUNCTIONS //#
 def process_events():
 	ltxt('Processing events!')
-	#print('-- \'running\' is set to: ' + str(gv['running']) + newline)
 	
+	# process population for this loop
 	pop = (
 			gv['free_pop'] + gv['farmers'] + gv['doctors'] +
 			gv['lumbers'] + gv['miners']

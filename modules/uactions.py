@@ -29,11 +29,8 @@ def add_farmers():
 
 	utxt('You have ' + str(gv['farmers']) + ' farmers.')
 
+# run farm function
 def farm():
-	# ask user if they want to add farmers
-	add_farmers()
-
-	# run farm function
 	calamity = 0
 	ltxt('RNG is set to: ' + str(gv['rng']))
 	ltxt('Farm Calamity is currently set to: ' + str(calamity))

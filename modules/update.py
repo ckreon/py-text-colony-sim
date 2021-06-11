@@ -3,8 +3,10 @@ from modules.config		import gv
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 from modules.helpers	import rng
+from modules.helpers	import date_update
 from modules.helpers	import game_over
 from modules.calamity	import calamity
+from modules.uactions	import farm
 
 
 #// VARIABLES //#
@@ -13,7 +15,6 @@ newline = gv['newline']
 
 #// FUNCTIONS //#
 def update():
-
 	ltxt('Updating!')
 	
 	# set the RNG seed for this loop
@@ -22,8 +23,20 @@ def update():
 	ltxt('After randomization, RNG is set to: ' + str(gv['rng']))
 
 	# build the base Calamity tree based off the RNG seed
+	ltxt('Calling calamity function')
 	calamity()
 
+	# update date
+	ltxt('Calling date_update function')
+	date_update()
+
+	# farm
+	ltxt('Calling farm function')
+	farm()
+
+	# update deaths
+
+	# update food
 	utxt('Eating food...', 0.7)
 	# set 'food' value equal to current food minus current population
 	gv['food'] = gv['food'] - gv['population']
@@ -33,6 +46,7 @@ def update():
 		utxt('Good try, though.')
 		game_over()
 
+	# update health
 	utxt('Using health supplies...', 0.7)
 	# set 'health' value equal to currenth health minus current population
 	gv['health'] = gv['health'] - gv['population']
