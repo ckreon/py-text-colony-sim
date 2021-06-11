@@ -18,11 +18,14 @@ newline = gv['newline']
 def manage_workers(worker_type):
 	getting_input = True
 
+	ltxt('Starting input loop for worker management')
 	while (getting_input):
 		utxt('How many ' + worker_type + ' would you like to modify?')
 		new_workers = user_number()
-		
+		ltxt('User Input returned as: ' + str(new_workers))
+
 		if (new_workers > 0):
+			ltxt('User Input is greater than 0')
 			if (gv['free_pop'] >= new_workers):
 				gv[worker_type] += new_workers
 				gv['free_pop'] -= new_workers
@@ -30,13 +33,15 @@ def manage_workers(worker_type):
 			else:
 				utxt('You don\'t have enough Free Population for that.')
 		elif (new_workers < 0):
-			if (gv[worker_type] >= new_workers):
+			ltxt('User Input is less than 0')
+			if (gv[worker_type] >= abs(new_workers)):
 				gv[worker_type] += new_workers
 				gv['free_pop'] -= new_workers
 				getting_input = False
 			else:
 				utxt('You don\'t have enough ' + worker_type + ' for that.')
 		elif (new_workers == 0):
+			ltxt('User Input is 0')
 			getting_input = False
 
 	utxt('You have ' + str(gv[worker_type]) + ' ' + worker_type + '.')
@@ -108,4 +113,3 @@ def health():
 
 	gv['health'] = (gv['health'] + health)
 	utxt('You now have ' + str(gv['health']) + ' health supplies in storage.')
-	

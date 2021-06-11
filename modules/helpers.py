@@ -24,7 +24,7 @@ def ltxt(l_string):
 		# print string and add newline (defined in config to be OS correct)
 		print('** (Log) ' + l_string + newline)
 		# sleep for the provided amount of seconds
-		time.sleep(0.5)
+		time.sleep(0)
 
 # this function should print a string to the console and sleep for a provided
 # amount of seconds after printing the text, adding a newline by default
