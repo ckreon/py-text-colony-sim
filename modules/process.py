@@ -8,6 +8,11 @@ from modules.helpers	import press_enter
 #// FUNCTIONS //#
 def process_events():
 	ltxt('Processing events!')
+	food_used = gv['population']
+	health_used = gv['population']
+	wood_used = round(gv['population'] * 0.5)
+	iron_used = round(gv['population'] * 0.5)
+	gold_used = round(gv['population'] * 0.2)
 	
 	# process population for this loop
 	pop = (
@@ -17,28 +22,30 @@ def process_events():
 	gv['population'] = pop
 
 	ltxt('Starting stats update')
+
 	# update food
-	utxt('Eating food...')
+	utxt('Using ' + str(food_used) + ' food...', 0.3, False)
 	# set 'food' value equal to current food minus current population
-	gv['food'] -= gv['population']
+	gv['food'] -= food_used
 
 	# update health
-	utxt('Using health supplies...')
+	utxt('Using ' + str(health_used) + ' health...', 0.3, False)
 	# set 'health' value equal to current health minus current population
-	gv['health'] -= gv['population']
+	gv['health'] -= health_used
 
 	# update wood
-	utxt('Using wood...')
+	utxt('Using ' + str(wood_used) + ' wood...', 0.3, False)
 	# set 'wood' value equal to current wood minus current population
-	gv['wood'] -= (round(gv['population'] * 0.5))
+	gv['wood'] -= wood_used
 
 	# update metals
-	utxt('Using metals...')
+	utxt('Using ' + str(iron_used) + ' iron...', 0.3, False)
+	utxt('Using ' + str(gold_used) + ' gold...')
 	# set 'iron' and 'gold' values equal to current values minus
 	# current population
-	gv['iron'] -= (round(gv['population'] * 0.5))
-	gv['gold'] -= (round(gv['population'] * 0.2))
-
+	gv['iron'] -= iron_used
+	gv['gold'] -= gold_used
+	
 	if (gv['food'] < 0):
 		utxt('Your colony has run out of food and starved.', 0.5, False)
 		utxt('Good try, though.')

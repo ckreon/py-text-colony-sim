@@ -38,13 +38,37 @@ def utxt(u_string, u_sleep=0.5, u_newline=True):
 	# sleep for the provided amount of seconds
 	time.sleep(u_sleep)
 
-# this function should set the 'running' variable to 'False'
-# and end the current game, returning user to the main menu
-def game_over():
-	# set 'running' variable to 'False' to end the game after this loop
-	gv['running']	= False
-	# set 'main_menu' variable to 'True' so we get a menu next loop
-	gv['main_menu']	= True
+# add citizens to the farm profession
+def manage_workers(worker_type):
+	getting_input = True
+
+	ltxt('Starting input loop for worker management')
+	while (getting_input):
+		utxt('How many ' + worker_type + ' would you like to modify?')
+		new_workers = user_number()
+		ltxt('User Input returned as: ' + str(new_workers))
+
+		if (new_workers > 0):
+			ltxt('User Input is greater than 0')
+			if (gv['free_pop'] >= new_workers):
+				gv[worker_type] += new_workers
+				gv['free_pop'] -= new_workers
+				getting_input = False
+			else:
+				utxt('You don\'t have enough Free Population for that.')
+		elif (new_workers < 0):
+			ltxt('User Input is less than 0')
+			if (gv[worker_type] >= abs(new_workers)):
+				gv[worker_type] -= abs(new_workers)
+				gv['free_pop'] += abs(new_workers)
+				getting_input = False
+			else:
+				utxt('You don\'t have enough ' + worker_type + ' for that.')
+		elif (new_workers == 0):
+			ltxt('User Input is 0')
+			getting_input = False
+
+	utxt('You have ' + str(gv[worker_type]) + ' ' + worker_type + '.')
 
 # 
 # this function should get user input and return it
@@ -95,3 +119,15 @@ def press_enter():
 
 	# force user to hit ENTER to continue
 	input()
+
+# this function should set the 'running' variable to 'False'
+# and end the current game, returning user to the main menu
+def game_over():
+	# set 'running' variable to 'False' to end the game after this loop
+	gv['running']	= False
+	# set 'main_menu' variable to 'True' so we get a menu next loop
+	gv['main_menu']	= True
+	print(newline + newline + newline + newline + newline)
+	print(newline + newline + newline + newline + newline)
+	print(newline + newline + newline + newline + newline)
+	print(newline + newline + newline + newline + newline)

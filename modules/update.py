@@ -4,14 +4,11 @@ from modules.helpers	import ltxt
 from modules.helpers	import rng
 from modules.helpers	import date_update
 from modules.calamity	import calamity
-from modules.uactions	import farm
-from modules.uactions	import health
-from modules.uactions	import lumber
-from modules.uactions	import metals
-
-
-#// VARIABLES //#
-newline = gv['newline']
+from modules.farm		import farm
+from modules.health		import health
+from modules.lumber		import lumber
+from modules.metals		import metals
+from modules.population	import population
 
 
 #// FUNCTIONS //#
@@ -30,6 +27,10 @@ def update():
 	# update date
 	ltxt('Calling date_update function')
 	date_update()
+
+	# update population
+	ltxt('Calling population function')
+	population()
 
 	# farm
 	ltxt('Calling farm function')

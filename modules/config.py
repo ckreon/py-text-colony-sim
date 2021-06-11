@@ -41,5 +41,3 @@ weather = {
 	9:	"Heat Snap",
 	10:	"Cold Snap"
 }
-
-world_grid = {}

@@ -2,7 +2,7 @@
 import re	# regular expression library
 from modules.config		import gv
 from modules.config		import weather
-from modules.uactions	import manage_workers
+from modules.helpers	import manage_workers
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 
@@ -14,8 +14,8 @@ def main_menu():
 	getting_input = True
 
 	while (getting_input):
-		utxt('--MAIN MENU--', 0.2, False)
-		utxt('Would you like to:', 0.2, False)
+		utxt('--MAIN MENU--', 0.25, False)
+		utxt('Would you like to:', 0.25, False)
 		utxt('| 1 | Start a New Game', 0, False)
 		utxt('| Q | Quit Game', 0, False)
 		u_input = input('>> ')
@@ -40,8 +40,8 @@ def game_menu():
 		# draw the overview
 		overview()
 		# draw the menu
-		utxt('--GAME MENU--', 0.2, False)
-		utxt('Would you like to:', 0.2, False)
+		utxt('--GAME MENU--', 0.25, False)
+		utxt('Would you like to:', 0.25, False)
 		utxt('| 1 | Manage Farmers', 0, False)
 		utxt('| 2 | Manage Doctors', 0, False)
 		utxt('| 3 | Manage Lumbers', 0, False)
@@ -91,7 +91,7 @@ def overview():
 		str(gv['month']) + '-' + str(gv['day']) + '-' + str(gv['year'])
 	)
 	# print the various stats
-	utxt('--OVERVIEW--', 0.2, False)	
+	utxt('--OVERVIEW--', 0.25, False)	
 	utxt(('Date: ' + game_date), 0, False)
 	utxt(('Weather: ' + weather[gv['weather']]), 0, False)
 	utxt(('Total Population: ' + str(gv['population'])), 0, False)
@@ -104,4 +104,4 @@ def overview():
 	utxt(('Wood: ' + str(gv['wood'])), 0, False)
 	utxt(('Iron: ' + str(gv['iron'])), 0, False)
 	utxt(('Gold: ' + str(gv['gold'])), 0, False)
-	utxt(('Health: ' + str(gv['health'])), 0.2)
+	utxt(('Health: ' + str(gv['health'])), 0.25)
