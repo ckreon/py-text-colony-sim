@@ -73,12 +73,16 @@ def user_number():
 	while (getting_input):
 		u_input = input('>> ')
 
-		if (int(u_input)):
+		if (u_input == '0'):
 			getting_input = False
+			return 0
 		else:
-			utxt('Must be a number!')
-
-	return int(u_input)
+			try:
+				int(u_input)
+				getting_input = False
+				return int(u_input)
+			except:
+				utxt('Must be a whole number!')
 
 # this function should update the date by one day, including
 # adjusting the month and year as necessary per gregorian calendar

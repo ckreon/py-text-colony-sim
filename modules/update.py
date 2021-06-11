@@ -7,6 +7,7 @@ from modules.helpers	import date_update
 from modules.helpers	import game_over
 from modules.calamity	import calamity
 from modules.uactions	import farm
+from modules.uactions	import health
 
 
 #// VARIABLES //#
@@ -34,7 +35,9 @@ def update():
 	ltxt('Calling farm function')
 	farm()
 
-	# update deaths
+	# health
+	ltxt('Calling health function')
+	health()
 	
 	# update stats
 	update_stats()
