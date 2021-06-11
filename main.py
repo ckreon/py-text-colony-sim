@@ -52,7 +52,7 @@ print('========                                ========')
 print('=============                      =============')
 print('================================================')
 print(newline + newline + newline)
-utxt('', 1)
+utxt('')
 
 
 #// MAIN APP LOOP //#

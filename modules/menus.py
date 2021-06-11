@@ -1,6 +1,7 @@
 #// IMPORTS //#
 import re	# regular expression library
 from modules.config		import gv
+from modules.config		import weather
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 
@@ -44,7 +45,7 @@ def game_menu():
 		utxt('| 2 | Manage Doctors', 0, False)
 		utxt('| 3 | Manage Lumbers', 0, False)
 		utxt('| 4 | Manage Miners', 0, False)
-		utxt('| 5 | Process Day', 0, False)
+		utxt('| 5 | Process Turn', 0, False)
 		utxt('| Q | Quit Game', 0, False)
 		u_input = input('>> ')
 		print()
@@ -66,7 +67,7 @@ def game_menu():
 			# get input/manage miners
 
 		elif (u_input == '5'):
-			utxt('Processing Day!')
+			utxt('Processing Turn!')
 			getting_input = False
 			# get input/manage miners
 
@@ -87,6 +88,7 @@ def overview():
 	# print the various stats
 	utxt('--OVERVIEW--', 0, False)	
 	utxt(('Date: ' + game_date), 0, False)
+	utxt(('Weather: ' + weather[gv['weather']]), 0, False)
 	utxt(('Total Population: ' + str(gv['population'])), 0, False)
 	utxt(('Free Population: ' + str(gv['free_pop'])), 0, False)
 	utxt(('Farmers: ' + str(gv['farmers'])), 0, False)
@@ -97,4 +99,4 @@ def overview():
 	utxt(('Wood: ' + str(gv['wood'])), 0, False)
 	utxt(('Iron: ' + str(gv['iron'])), 0, False)
 	utxt(('Gold: ' + str(gv['gold'])), 0, False)
-	utxt(('Health: ' + str(gv['health'])), 0.7)
+	utxt(('Health: ' + str(gv['health'])), 0.2)

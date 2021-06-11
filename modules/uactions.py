@@ -37,22 +37,22 @@ def farm():
 
 	if (gv['rng'] <= 5):
 		# normal outcome
-		utxt('It was a normal day on the farms.')
+		utxt('It was a normal month on the farms.')
 		calamity = 0
 
 	elif (gv['rng'] <= 7):
 		# poor outcome
-		utxt('It was a bad day on the farms.')
+		utxt('It was a bad month on the farms.')
 		calamity = -2
 
 	elif (gv['rng'] <= 9):
 		# great outcome
-		utxt('It was a great day on the farms!')
+		utxt('It was a great month on the farms!')
 		calamity = 3
 
 	elif (gv['rng'] == 10):
 		# awful outcome
-		utxt('It was a terrible day on the farms!')
+		utxt('It was a terrible month on the farms!')
 		calamity = -3
 
 	ltxt('Farm Calamity is now set to: ' + str(calamity))

@@ -83,40 +83,17 @@ def user_number():
 # this function should update the date by one day, including
 # adjusting the month and year as necessary per gregorian calendar
 def date_update():
-	# make local variables for easier use
-	day		= gv['day']
-	month	= gv['month']
-	year	= gv['year']
-	# variables to store days of current month
-	months_in_year	= 12
-	days_in_month	= 31
+	# variables to store months of year
+	months_in_year = 12
 
-	# set days_in_month to be correct for current month
-	if (month == 1 or 3 or 5 or 7 or 8 or 10 or 12):
-		days_in_month = 31
-	elif (month == 4 or 6 or 9 or 11):
-		days_in_month = 30
-	elif (month == 2):
-		days_in_month = 28
-
-	# advance date by one day if not the last day of the month
-	if (day < days_in_month):
-		day += 1
-	# if it is the last day of the month, set the day back to 1
-	elif (day == days_in_month):
-		day = 1
-		# advance the date by one month if not the last month of the year
-		if (month < months_in_year):
-			month += 1
-		# if it is the last month of the year, set the month back to 1
-		elif (month == months_in_year):
-			month = 1
-			# advance date by one year
-			year += 1
-
-	gv['day']	= day
-	gv['month']	= month
-	gv['year']	= year
+	# advance the date by one month if not the last month of the year
+	if (gv['month'] < months_in_year):
+		gv['month'] += 1
+	# if it is the last month of the year, set the month back to 1
+	elif (gv['month'] == months_in_year):
+		gv['month'] = 1
+		# advance date by one year
+		gv['year'] += 1
 
 # this function should ask the user if they'd like to quit
 # if they answer yes, it should actually quit, if not, wheel
