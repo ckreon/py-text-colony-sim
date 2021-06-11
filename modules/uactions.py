@@ -15,31 +15,31 @@ newline = gv['newline']
 #// FUNCTIONS //#
 
 # add citizens to the farm profession
-def manage_farmers():
+def manage_workers(worker_type):
 	getting_input = True
 
 	while (getting_input):
-		utxt('How many Farmers would you like to modify?')
-		new_farmers = user_number()
+		utxt('How many ' + worker_type + ' would you like to modify?')
+		new_workers = user_number()
 		
-		if (new_farmers > 0):
-			if (gv['free_pop'] >= new_farmers):
-				gv['farmers'] += new_farmers
-				gv['free_pop'] -= new_farmers
+		if (new_workers > 0):
+			if (gv['free_pop'] >= new_workers):
+				gv[worker_type] += new_workers
+				gv['free_pop'] -= new_workers
 				getting_input = False
 			else:
 				utxt('You don\'t have enough Free Population for that.')
-		elif (new_farmers < 0):
-			if (gv['farmers'] >= new_farmers):
-				gv['farmers'] += new_farmers
-				gv['free_pop'] += new_farmers
+		elif (new_workers < 0):
+			if (gv[worker_type] >= new_workers):
+				gv[worker_type] += new_workers
+				gv['free_pop'] -= new_workers
 				getting_input = False
 			else:
-				utxt('You don\'t have enough Farmers for that.')
+				utxt('You don\'t have enough ' + worker_type + ' for that.')
 
-	utxt('You have ' + str(gv['farmers']) + ' Farmers.')
+	utxt('You have ' + str(gv[worker_type]) + ' ' + worker_type + '.')
 
-# run farm function
+# run farm function with calamity
 def farm():
 	calamity = 0
 	ltxt('RNG is set to: ' + str(gv['rng']))

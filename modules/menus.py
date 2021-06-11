@@ -2,7 +2,7 @@
 import re	# regular expression library
 from modules.config		import gv
 from modules.config		import weather
-from modules.uactions	import manage_farmers
+from modules.uactions	import manage_workers
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 from modules.helpers	import user_number
@@ -55,19 +55,22 @@ def game_menu():
 		if (u_input == '1'):
 			utxt('Managing Farmers!')
 			# get input/manage farmers
-			manage_farmers()
+			manage_workers('farmers')
 
 		elif (u_input == '2'):
 			utxt('Managing Doctors!')
 			# get input/manage doctors
+			manage_workers('doctors')
 
 		elif (u_input == '3'):
 			utxt('Managing Lumbers!')
 			# get input/manage lumbers
+			manage_workers('lumbers')
 
 		elif (u_input == '4'):
 			utxt('Managing Miners!')
 			# get input/manage miners
+			manage_workers('miners')
 
 		elif (u_input == '5'):
 			utxt('Processing Turn!')
