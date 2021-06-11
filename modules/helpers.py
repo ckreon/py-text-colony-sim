@@ -71,14 +71,14 @@ def user_number():
 	getting_input = True
 
 	while (getting_input):
-		number = input('>> ')
+		u_input = input('>> ')
 
-		if (int(number)):
+		if (int(u_input)):
 			getting_input = False
 		else:
 			utxt('Must be a number!')
 
-	return number
+	return int(u_input)
 
 # this function should update the date by one day, including
 # adjusting the month and year as necessary per gregorian calendar
@@ -94,23 +94,6 @@ def date_update():
 		gv['month'] = 1
 		# advance date by one year
 		gv['year'] += 1
-
-# this function should ask the user if they'd like to quit
-# if they answer yes, it should actually quit, if not, wheel
-def user_quit():
-	# get user input (with a prompt), and store it in 'quit_input'
-	quit_input = input('>> Do you want to quit? ')
-	print()
-	# use a regular expression to check 'quit' for 'y/yes' (any case)
-	if (re.match(r'^(y|ya|yes|)$', quit_input, re.IGNORECASE)):
-		# if yes, change running to 'False' and quit
-		gv['running'] = False
-		ltxt('\'running\' is set to: ' + str(gv['running']))
-		#quit()	# commented out to prove loop stops when 'running' is False
-	else:
-		# otherwise keep running ('else' isn't needed, just here for posterity)
-		utxt('Still looping!', 0 , False)
-		ltxt('\'running\' is set to: ' + str(gv['running']))
 
 # this function should ask the user to press enter to continue
 # nothing should happen until they press enter

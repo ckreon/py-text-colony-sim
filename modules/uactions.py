@@ -15,19 +15,29 @@ newline = gv['newline']
 #// FUNCTIONS //#
 
 # add citizens to the farm profession
-def add_farmers():
-	utxt('Would you like to assign new farmers?')
-	if (yes_or_no()):
-		utxt('How many farmers would you like to assign?')
+def manage_farmers():
+	getting_input = True
+
+	while (getting_input):
+		utxt('How many Farmers would you like to modify?')
 		new_farmers = user_number()
+		
+		if (new_farmers > 0):
+			if (gv['free_pop'] >= new_farmers):
+				gv['farmers'] += new_farmers
+				gv['free_pop'] -= new_farmers
+				getting_input = False
+			else:
+				utxt('You don\'t have enough Free Population for that.')
+		elif (new_farmers < 0):
+			if (gv['farmers'] >= new_farmers):
+				gv['farmers'] += new_farmers
+				gv['free_pop'] += new_farmers
+				getting_input = False
+			else:
+				utxt('You don\'t have enough Farmers for that.')
 
-		if (gv['free_pop'] >= new_farmers):
-			gv['farmers'] = (gv['farmers'] + new_farmers)
-			gv['free_pop'] = (gv['free_pop'] - new_farmers)
-		else:
-			utxt('You don\'t have enough population for that.')
-
-	utxt('You have ' + str(gv['farmers']) + ' farmers.')
+	utxt('You have ' + str(gv['farmers']) + ' Farmers.')
 
 # run farm function
 def farm():
@@ -37,22 +47,22 @@ def farm():
 
 	if (gv['rng'] <= 5):
 		# normal outcome
-		utxt('It was a normal month on the farms.')
+		utxt('It was a normal month on the Farms.')
 		calamity = 0
 
 	elif (gv['rng'] <= 7):
 		# poor outcome
-		utxt('It was a bad month on the farms.')
+		utxt('It was a bad month on the Farms.')
 		calamity = -2
 
 	elif (gv['rng'] <= 9):
 		# great outcome
-		utxt('It was a great month on the farms!')
+		utxt('It was a great month on the Farms!')
 		calamity = 3
 
 	elif (gv['rng'] == 10):
 		# awful outcome
-		utxt('It was a terrible month on the farms!')
+		utxt('It was a terrible month on the Farms!')
 		calamity = -3
 
 	ltxt('Farm Calamity is now set to: ' + str(calamity))

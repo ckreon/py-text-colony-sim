@@ -2,8 +2,10 @@
 import re	# regular expression library
 from modules.config		import gv
 from modules.config		import weather
+from modules.uactions	import manage_farmers
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
+from modules.helpers	import user_number
 
 
 #// FUNCTIONS //#
@@ -12,7 +14,7 @@ def main_menu():
 	gv['main_menu'] = False
 	getting_input = True
 
-	while getting_input:
+	while (getting_input):
 		utxt('--MAIN MENU--', 0.2, False)
 		utxt('Would you like to:', 0.2, False)
 		utxt('| 1 | Start a New Game', 0, False)
@@ -35,7 +37,7 @@ def main_menu():
 def game_menu():
 	getting_input = True
 
-	while getting_input:
+	while (getting_input):
 		# draw the overview
 		overview()
 		# draw the menu
@@ -53,6 +55,7 @@ def game_menu():
 		if (u_input == '1'):
 			utxt('Managing Farmers!')
 			# get input/manage farmers
+			manage_farmers()
 
 		elif (u_input == '2'):
 			utxt('Managing Doctors!')
@@ -86,7 +89,7 @@ def overview():
 		str(gv['month']) + '-' + str(gv['day']) + '-' + str(gv['year'])
 	)
 	# print the various stats
-	utxt('--OVERVIEW--', 0, False)	
+	utxt('--OVERVIEW--', 0.2, False)	
 	utxt(('Date: ' + game_date), 0, False)
 	utxt(('Weather: ' + weather[gv['weather']]), 0, False)
 	utxt(('Total Population: ' + str(gv['population'])), 0, False)
