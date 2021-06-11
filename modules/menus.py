@@ -5,7 +5,6 @@ from modules.config		import weather
 from modules.uactions	import manage_workers
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
-from modules.helpers	import user_number
 
 
 #// FUNCTIONS //#

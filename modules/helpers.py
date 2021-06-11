@@ -1,5 +1,4 @@
 #// IMPORTS //#
-import re		# regular expression library
 import time		# time functions library
 import random	# random functions library
 from modules.config		import gv
@@ -46,21 +45,8 @@ def game_over():
 	gv['running']	= False
 	# set 'main_menu' variable to 'True' so we get a menu next loop
 	gv['main_menu']	= True
-	
-# this function should get user input about a yes or no question
-# if they answer yes, it should return true, if no, return false
-def yes_or_no():
-	# get user input (with a prompt), and store it in 'user_input'
-	user_input = input('>> ')
-	print()
-	# use a regular expression to check input for 'y/yes' (any case)
-	if (re.match(r'^(y|ya|yes|)$', user_input, re.IGNORECASE)):
-		# if yes, return true
-		return True
-	else:
-		# otherwise return false
-		return False
 
+# 
 # this function should get user input and return it
 def user_input():
 	# return user input (with a prompt)

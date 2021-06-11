@@ -31,10 +31,10 @@ gv = {
 
 weather = {
 	1:	"Normal",
-	2:	"Warm",
-	3:	"Warm Windy",
+	2:	"Overcast",
+	3:	"Windy",
 	4:	"Cool",
-	5:	"Cool Windy",
+	5:	"Warm",
 	6:	"Hot",
 	7:	"Rainy",
 	8:	"Thunderstorm",
