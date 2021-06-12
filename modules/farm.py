@@ -9,21 +9,26 @@ from modules.config		import gv
 # run farm function with calamity
 def farm():
 	calamity = 0
-	ltxt('RNG is set to: ' + str(gv['rng']))
+	ltxt('Weather Seed is set to: ' + str(gv['weather']))
 	ltxt('Farm Calamity is currently set to: ' + str(calamity))
 
-	if (gv['weather'] <= 4):
+	if (gv['weather'] <= 2):
 		# normal outcome
+		utxt('The weather made for a good month on the Farms:', 0.3, False)
+		calamity = 2
+
+	elif (gv['weather'] <= 4):
+		# good outcome
 		utxt('The weather made for a normal month on the Farms:', 0.3, False)
 		calamity = 0
 
 	elif (gv['weather'] <= 6):
-		# poor outcome
+		# great outcome
 		utxt('The weather made for a great month on the Farms:', 0.3, False)
 		calamity = 4
 
 	elif (gv['weather'] <= 8):
-		# great outcome
+		# poor outcome
 		utxt('The weather made for a bad month on the Farms:', 0.3, False)
 		calamity = -2
 

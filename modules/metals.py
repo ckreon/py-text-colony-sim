@@ -9,7 +9,7 @@ from modules.config		import gv
 # run metals function with calamity
 def metals():
 	calamity = 0
-	ltxt('RNG is set to: ' + str(gv['rng']))
+	ltxt('RNG Seed is set to: ' + str(gv['rng']))
 	ltxt('Metals Calamity is currently set to: ' + str(calamity))
 
 	if (gv['rng'] >= 6):

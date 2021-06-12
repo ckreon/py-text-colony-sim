@@ -2,6 +2,7 @@
 import re	# regular expression library
 from modules.config		import gv
 from modules.config		import weather
+from modules.config		import immunity
 from modules.helpers	import manage_workers
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
@@ -94,6 +95,7 @@ def overview():
 	utxt('--OVERVIEW--', 0.25, False)	
 	utxt(('Date: ' + game_date), 0, False)
 	utxt(('Weather: ' + weather[gv['weather']]), 0, False)
+	utxt(('Immunity: ' + immunity[gv['immunity']]), 0, False)
 	utxt(('Total Population: ' + str(gv['population'])), 0, False)
 	utxt(('Free Population: ' + str(gv['free_pop'])), 0, False)
 	utxt(('Farmers: ' + str(gv['farmers'])), 0, False)

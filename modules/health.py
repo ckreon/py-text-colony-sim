@@ -9,28 +9,33 @@ from modules.config		import gv
 # run health function with calamity
 def health():
 	calamity = 0
-	ltxt('RNG is set to: ' + str(gv['rng']))
+	ltxt('Immunity Seed is set to: ' + str(gv['immunity']))
 	ltxt('Health Calamity is currently set to: ' + str(calamity))
 
-	if (gv['rng'] >= 6):
+	if (gv['immunity'] <= 2):
+		# good outcome
+		utxt('It was a good month at the Hospitals:', 0.3, False)
+		calamity = 2
+
+	elif (gv['immunity'] <= 4):
 		# normal outcome
 		utxt('It was a normal month at the Hospitals:', 0.3, False)
 		calamity = 0
 
-	elif (gv['rng'] >= 4):
+	elif (gv['immunity'] <= 6):
+		# great outcome
+		utxt('It was a great month at the Hospitals:', 0.3, False)
+		calamity = 4
+
+	elif (gv['immunity'] <= 8):
 		# poor outcome
 		utxt('It was a bad month at the Hospitals:', 0.3, False)
 		calamity = -2
 
-	elif (gv['rng'] >= 2):
-		# great outcome
-		utxt('It was a great month at the Hospitals:', 0.3, False)
-		calamity = 3
-
-	elif (gv['rng'] == 1):
+	elif (gv['immunity'] <= 10):
 		# awful outcome
 		utxt('It was a terrible month at the Hospitals:', 0.3, False)
-		calamity = -3
+		calamity = -4
 
 	ltxt('Health Calamity is now set to: ' + str(calamity))
 

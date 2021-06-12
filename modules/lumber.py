@@ -9,7 +9,7 @@ from modules.config		import gv
 # run lumber function with calamity
 def lumber():
 	calamity = 0
-	ltxt('RNG is set to: ' + str(gv['rng']))
+	ltxt('RNG Seed is set to: ' + str(gv['rng']))
 	ltxt('Lumber Calamity is currently set to: ' + str(calamity))
 
 	if (gv['rng'] <= 5):
