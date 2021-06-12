@@ -14,35 +14,39 @@ def health():
 
 	if (gv['immunity'] <= 2):
 		# good outcome
-		utxt('It was a good month at the Hospitals:', 0.3, False)
+		print_status('good')
 		calamity = 2
 
 	elif (gv['immunity'] <= 4):
 		# normal outcome
-		utxt('It was a normal month at the Hospitals:', 0.3, False)
+		print_status('normal')
 		calamity = 0
 
 	elif (gv['immunity'] <= 6):
 		# great outcome
-		utxt('It was a great month at the Hospitals:', 0.3, False)
+		print_status('great')
 		calamity = 4
 
 	elif (gv['immunity'] <= 8):
-		# poor outcome
-		utxt('It was a bad month at the Hospitals:', 0.3, False)
+		# bad outcome
+		print_status('bad')
 		calamity = -2
 
 	elif (gv['immunity'] <= 10):
-		# awful outcome
-		utxt('It was a terrible month at the Hospitals:', 0.3, False)
+		# terrible outcome
+		print_status('terrible')
 		calamity = -4
 
 	ltxt('Health Calamity is now set to: ' + str(calamity))
 
+	# Generate health
 	health = ((gv['doctors']*3) + calamity)
 	utxt('You generated ' + str(health) +
 	     ' health supplies this turn.', 0.3, False)
-
+	# Add generated health to storage
 	gv['health'] = (gv['health'] + health)
 	utxt('You now have ' + str(gv['health']) +
 	     ' health supplies in storage.')
+
+def print_status(status):
+	utxt(('It was a ' + status + ' month at the Hospitals:'), 0.3, False)

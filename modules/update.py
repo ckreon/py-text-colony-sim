@@ -16,11 +16,11 @@ def update():
 	ltxt('Updating!')
 	
 	# set the RNG seed for this loop
-	ltxt('Prior to randomization, RNG is set to: ' + str(gv['rng']))
+	ltxt('Prior to randomization, RNG Seed is set to: ' + str(gv['rng']))
 	gv['rng'] = rng()
-	ltxt('After randomization, RNG is set to: ' + str(gv['rng']))
+	ltxt('After randomization, RNG Seed is set to: ' + str(gv['rng']))
 
-	# build the base Calamity tree based off the RNG seed
+	# build the Calamity tree based off the RNG seed for this loop
 	ltxt('Calling calamity function')
 	calamity()
 
@@ -41,7 +41,7 @@ def update():
 	health()
 
 	# lumber
-	ltxt('Calling health function')
+	ltxt('Calling lumber function')
 	lumber()
 
 	# metals

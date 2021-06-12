@@ -94,8 +94,8 @@ def overview():
 	# print the various stats
 	utxt('--OVERVIEW--', 0.25, False)	
 	utxt(('Date: ' + game_date), 0, False)
-	utxt(('Weather: ' + weather[gv['weather']]), 0, False)
-	utxt(('Immunity: ' + immunity[gv['immunity']]), 0, False)
+	utxt(('Last Weather: ' + weather[gv['weather']]), 0, False)
+	utxt(('Last Immunity: ' + immunity[gv['immunity']]), 0, False)
 	utxt(('Total Population: ' + str(gv['population'])), 0, False)
 	utxt(('Free Population: ' + str(gv['free_pop'])), 0, False)
 	utxt(('Farmers: ' + str(gv['farmers'])), 0, False)

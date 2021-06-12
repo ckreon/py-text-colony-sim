@@ -13,34 +13,38 @@ def farm():
 	ltxt('Farm Calamity is currently set to: ' + str(calamity))
 
 	if (gv['weather'] <= 2):
-		# normal outcome
-		utxt('The weather made for a good month on the Farms:', 0.3, False)
+		# good outcome
+		print_status('good')
 		calamity = 2
 
 	elif (gv['weather'] <= 4):
-		# good outcome
-		utxt('The weather made for a normal month on the Farms:', 0.3, False)
+		# normal outcome
+		print_status('normal')
 		calamity = 0
 
 	elif (gv['weather'] <= 6):
 		# great outcome
-		utxt('The weather made for a great month on the Farms:', 0.3, False)
+		print_status('great')
 		calamity = 4
 
 	elif (gv['weather'] <= 8):
-		# poor outcome
-		utxt('The weather made for a bad month on the Farms:', 0.3, False)
+		# bad outcome
+		print_status('bad')
 		calamity = -2
 
 	elif (gv['weather'] <= 10):
-		# awful outcome
-		utxt('The weather made for a terrible month on the Farms:', 0.3, False)
+		# terrible outcome
+		print_status('terrible')
 		calamity = -4
 
 	ltxt('Farm Calamity is now set to: ' + str(calamity))
 
+	# Generate food
 	food = ((gv['farmers']*3) + calamity)
 	utxt('You generated ' + str(food) + ' food this turn.', 0.3, False)
-
+	# Add generated food to storage
 	gv['food'] = (gv['food'] + food)
 	utxt('You now have ' + str(gv['food']) + ' food in storage.')
+
+def print_status(status):
+	utxt(('It was a ' + status + ' month on the Farms:'), 0.3, False)
