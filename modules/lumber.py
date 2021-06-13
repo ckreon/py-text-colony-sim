@@ -39,7 +39,7 @@ def lumber():
 
 	ltxt('Lumber Calamity is now set to: ' + str(calamity))
 
-	wood = ((gv['lumbers']*4) + calamity)
+	wood = ((gv['lumbers'] * 4) + calamity)
 	utxt('You generated ' + str(wood) + ' wood this turn.', 0.3, False)
 
 	gv['wood'] = (gv['wood'] + wood)

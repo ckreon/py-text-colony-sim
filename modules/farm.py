@@ -40,7 +40,7 @@ def farm():
 	ltxt('Farm Calamity is now set to: ' + str(calamity))
 
 	# Generate food
-	food = ((gv['farmers']*3) + calamity)
+	food = ((gv['farmers'] * 3) + calamity)
 	utxt('You generated ' + str(food) + ' food this turn.', 0.3, False)
 	# Add generated food to storage
 	gv['food'] = (gv['food'] + food)

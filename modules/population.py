@@ -15,7 +15,7 @@ def population():
 
 	# Calculate new population to add and round to a whole number
 	new_pop = round(
-	          ((gv['free_pop'] +1)
+	          ((gv['free_pop'] + 1)
 	           		* (gv['population'] / 2.5))
 	          	    * birthrate
 	           	/ 10

@@ -40,7 +40,7 @@ def health():
 	ltxt('Health Calamity is now set to: ' + str(calamity))
 
 	# Generate health
-	health = ((gv['doctors']*3) + calamity)
+	health = ((gv['doctors'] * 3) + calamity)
 	utxt('You generated ' + str(health) +
 	     ' health supplies this turn.', 0.3, False)
 	# Add generated health to storage

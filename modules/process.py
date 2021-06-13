@@ -11,8 +11,8 @@ def process_events():
 	food_used = gv['population']
 	health_used = gv['population']
 	wood_used = round(gv['population'] * 0.5)
-	iron_used = round(gv['population'] * 0.5)
-	gold_used = round(gv['population'] * 0.2)
+	iron_used = round(gv['population'] * 0.4)
+	gold_used = round(gv['population'] * 0.3)
 
 	ltxt('Starting stats update')
 

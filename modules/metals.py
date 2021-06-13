@@ -40,7 +40,7 @@ def metals():
 	ltxt('Metals Calamity is now set to: ' + str(calamity))
 
 	# Generate iron
-	iron = ((gv['miners']*2) + calamity)
+	iron = ((gv['miners'] * 2) + calamity)
 	utxt('You generated ' + str(iron) + ' iron this turn.', 0.3, False)
 	# Add generated iron to storage
 	gv['iron'] = (gv['iron'] + iron)
