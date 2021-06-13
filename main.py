@@ -29,7 +29,7 @@ from modules.draw		import draw
 
 #// ARGS //#
 if (len(sys.argv) > 1):
-	if (sys.argv[1] == "--verbose"):
+	if (sys.argv[1] == '--verbose'):
 		gv['verbose'] = True
 
 

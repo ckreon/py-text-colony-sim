@@ -13,13 +13,6 @@ def process_events():
 	wood_used = round(gv['population'] * 0.5)
 	iron_used = round(gv['population'] * 0.5)
 	gold_used = round(gv['population'] * 0.2)
-	
-	# process population for this loop
-	pop = (
-			gv['free_pop'] + gv['farmers'] + gv['doctors'] +
-			gv['lumbers'] + gv['miners']
-		)
-	gv['population'] = pop
 
 	ltxt('Starting stats update')
 
