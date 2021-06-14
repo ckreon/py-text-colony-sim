@@ -123,11 +123,42 @@ def press_enter():
 # this function should set the 'running' variable to 'False'
 # and end the current game, returning user to the main menu
 def game_over():
-	# set 'running' variable to 'False' to end the game after this loop
-	gv['running']	= False
-	# set 'main_menu' variable to 'True' so we get a menu next loop
-	gv['main_menu']	= True
-	print(newline + newline + newline + newline + newline)
-	print(newline + newline + newline + newline + newline)
-	print(newline + newline + newline + newline + newline)
-	print(newline + newline + newline + newline + newline)
+	# reset most of the global variables
+	# set 'running' to 'False' to end the game after this loop
+	gv['running']	 =	False
+	# set 'main_menu' to 'True' so we get a menu next loop
+	gv['main_menu']	 =	True
+	# set game variables back to base settings
+	gv['day']		 =	1
+	gv['month']		 =	1
+	gv['year']		 =	1
+	gv['rng']		 =	0
+	gv['weather']	 =	1
+	gv['immunity']	 =	1
+	gv['birthrate']	 =	10
+	gv['population'] =	10
+	gv['free_pop']	 =	10
+	gv['farmers']	 =	0
+	gv['doctors']	 =	0
+	gv['lumbers']	 =	0
+	gv['miners']	 =	0
+	gv['food']		 =	100
+	gv['wood']		 =	100
+	gv['iron']		 =	100
+	gv['gold']		 =	100
+	gv['health']	 =	100
+
+	print(newline)
+	print('=================================================')
+	print('=============                       =============')
+	print('========                                 ========')
+	print('=====                                       =====')
+	print('===                                           ===')
+	print('=                TEXT COLONY SIM                =')
+	print('=              Thanks for playing!              =')
+	print('===                                           ===')
+	print('=====                                       =====')
+	print('========                                 ========')
+	print('=============                       =============')
+	print('=================================================')
+	print(newline + newline + newline)

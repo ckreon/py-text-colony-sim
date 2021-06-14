@@ -8,8 +8,6 @@ gv = {
 	'running':		False,
 	'verbose':		False,
 	'main_menu':	True,
-	'new_game':		False,
-	'world_size':	10,
 	'day':			1,
 	'month':		1,
 	'year':			1,

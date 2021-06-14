@@ -3,6 +3,7 @@ from modules.config		import gv
 from modules.helpers	import ltxt
 from modules.helpers	import utxt
 from modules.helpers	import press_enter
+from modules.helpers	import game_over
 
 
 #// FUNCTIONS //#
