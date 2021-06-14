@@ -5,8 +5,10 @@ A turn-based text colony simulator!
 ## How to Run
 
 Requires: Python 3.x
-From CLI: from the project directory, run `python main.py`
-From GUI: from the project directory, Double-Click the `main.py` file
+
+CLI: from the project directory, run `python main.py`
+
+GUI: from the project directory, Double-Click the `main.py` file
 
 ## Gameplay Basics
 
